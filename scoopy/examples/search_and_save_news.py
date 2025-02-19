@@ -1,6 +1,5 @@
 import os
 from dol import JsonFiles
-from scoopy import search_news
 
 
 def current_time_str():
