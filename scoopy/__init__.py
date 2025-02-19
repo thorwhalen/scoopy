@@ -16,6 +16,5 @@ Sentiment analysis for stock market data.
 
 """
 
-
-from scoopy.data_sources import headlines
+from scoopy.data_sources import headlines, yahoo_finance_news_search
 from scoopy.base import search_news

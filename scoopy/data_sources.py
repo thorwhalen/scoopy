@@ -1,6 +1,10 @@
 """Data sources."""
 
+from functools import lru_cache
+
 import requests
+from scoopy.util import get_config
+
 
 dflt_headers = {
     'User-Agent': (
@@ -11,7 +15,35 @@ dflt_headers = {
 }
 
 
-def headlines_from_yahoo_finance(headers=None):
+# --------------------------------------------------------------------------------------
+# Newsdata API
+
+
+@lru_cache
+def _newsdata_client():
+    from newsdataapi import NewsDataApiClient
+
+    return NewsDataApiClient(apikey=get_config('NEWSDATA_API_KEY'))
+
+
+def newsdata_search(query, *, _egress=lambda x: x['results'], **kwargs):
+    # Initialize the client with your API key
+    api = _newsdata_client()
+
+    # Fetch news articles based on a query
+    response = api.latest_api(query, **kwargs)
+
+    if response['status'] != 'success':
+        raise ValueError(f"Newsdata API did not return a 'success' status.")
+
+    return _egress(response)
+
+
+# --------------------------------------------------------------------------------------
+# Yahoo
+
+
+def yahoo_finance_headlines(headers=None):
     """Get headlines from Yahoo Finance."""
     from bs4 import BeautifulSoup
 
@@ -38,7 +70,7 @@ def headlines_from_yahoo_finance(headers=None):
                 yield headline
 
 
-def yahoo_finance_search(
+def yahoo_finance_news_search(
     query, *, quotesCount=0, newsCount=10, listsCount=0, headers=None, **kwargs
 ):
     """
@@ -105,4 +137,4 @@ def yahoo_finance_news_for_ticker(ticker_symbol, *, session=None, timeout=None):
 
 # alias for forwards compatibility
 # (might get our headlines from somewhere else (possibly multiple places) in the future)
-headlines = headlines_from_yahoo_finance
+headlines = yahoo_finance_headlines
