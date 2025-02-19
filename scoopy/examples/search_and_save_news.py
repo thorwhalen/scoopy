@@ -9,7 +9,7 @@ def current_time_str():
     return now.strftime("%Y-%m-%d--%H-%M-%S")
 
 
-def search_and_save_news(query, store='~', country='us'):
+def search_and_save_news(query, store="~", country="us"):
     from scoopy import search_news
 
     if isinstance(store, str):
@@ -22,12 +22,12 @@ def search_and_save_news(query, store='~', country='us'):
 
         store = JsonFiles(rootdir)
     results = search_news(query)
-    key = f'{current_time_str()}__{query}.json'
+    key = f"{current_time_str()}__{query}.json"
     store[key] = results
     return key
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import argh
 
     argh.dispatch_command(search_and_save_news)

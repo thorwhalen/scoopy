@@ -7,10 +7,10 @@ from scoopy.util import get_config
 
 
 dflt_headers = {
-    'User-Agent': (
-        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-        'AppleWebKit/537.36 (KHTML, like Gecko) '
-        'Chrome/110.0.0.0 Safari/537.36'
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/110.0.0.0 Safari/537.36"
     )
 }
 
@@ -23,17 +23,17 @@ dflt_headers = {
 def _newsdata_client():
     from newsdataapi import NewsDataApiClient
 
-    return NewsDataApiClient(apikey=get_config('NEWSDATA_API_KEY'))
+    return NewsDataApiClient(apikey=get_config("NEWSDATA_API_KEY"))
 
 
-def newsdata_search(query, *, _egress=lambda x: x['results'], **kwargs):
+def newsdata_search(query, *, _egress=lambda x: x["results"], **kwargs):
     # Initialize the client with your API key
     api = _newsdata_client()
 
     # Fetch news articles based on a query
     response = api.latest_api(query, **kwargs)
 
-    if response['status'] != 'success':
+    if response["status"] != "success":
         raise ValueError(f"Newsdata API did not return a 'success' status.")
 
     return _egress(response)
@@ -47,7 +47,7 @@ def yahoo_finance_headlines(headers=None):
     """Get headlines from Yahoo Finance."""
     from bs4 import BeautifulSoup
 
-    url = 'https://finance.yahoo.com/news/'
+    url = "https://finance.yahoo.com/news/"
     response = requests.get(url, headers=headers or dflt_headers)
     if response.status_code != 200:
         print(
@@ -56,14 +56,14 @@ def yahoo_finance_headlines(headers=None):
         )
         return []
 
-    soup = BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, "html.parser")
 
     # Find all 'a' tags that contain 'href' attribute and 'h3' tag inside them
-    news_items = soup.find_all('a', href=True)
+    news_items = soup.find_all("a", href=True)
 
     for item in news_items:
         # Check if the 'a' tag contains an 'h3' tag with text
-        headline_tag = item.find('h3')
+        headline_tag = item.find("h3")
         if headline_tag:
             headline = headline_tag.text.strip()
             if headline:
