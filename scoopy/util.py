@@ -3,13 +3,13 @@
 import os
 from functools import partial
 
-from i2 import get_app_data_folder
+from i2 import get_app_config_folder
 
 import dol
 
 pkg_name = "scoopy"
 
-_root_app_data_dir = get_app_data_folder()
+_root_app_data_dir = get_app_config_folder()
 app_data_dir = os.environ.get(
     f"{pkg_name.upper()}_APP_DATA_DIR",
     os.path.join(_root_app_data_dir, pkg_name),
