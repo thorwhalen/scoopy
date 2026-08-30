@@ -1,0 +1,4 @@
+scoopy.examples.search_and_save_news
+====================================
+.. automodule:: scoopy.examples.search_and_save_news
+   :members:

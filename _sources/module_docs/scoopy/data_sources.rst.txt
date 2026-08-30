@@ -1,0 +1,4 @@
+scoopy.data_sources
+===================
+.. automodule:: scoopy.data_sources
+   :members:

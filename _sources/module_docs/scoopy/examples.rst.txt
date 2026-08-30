@@ -1,0 +1,4 @@
+scoopy.examples
+===============
+.. automodule:: scoopy.examples
+   :members:

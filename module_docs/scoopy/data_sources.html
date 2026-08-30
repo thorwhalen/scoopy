@@ -1,0 +1,189 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scoopy.data_sources &mdash; scoopy 0.0.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=1fd71caa"></script>
+      <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../_static/toggleprompt.js?v=d7ede5d2"></script>
+      <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="scoopy.examples" href="examples.html" />
+    <link rel="prev" title="scoopy.base" href="base.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            scoopy
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../scoopy.html">scoopy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="base.html">scoopy.base</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">scoopy.data_sources</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#scoopy.data_sources.headlines"><code class="docutils literal notranslate"><span class="pre">headlines()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scoopy.data_sources.yahoo_finance_headlines"><code class="docutils literal notranslate"><span class="pre">yahoo_finance_headlines()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scoopy.data_sources.yahoo_finance_news_for_ticker"><code class="docutils literal notranslate"><span class="pre">yahoo_finance_news_for_ticker()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scoopy.data_sources.yahoo_finance_news_search"><code class="docutils literal notranslate"><span class="pre">yahoo_finance_news_search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">scoopy.examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/search_and_save_news.html">scoopy.examples.search_and_save_news</a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">scoopy.util</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">scoopy</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">scoopy.data_sources</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/module_docs/scoopy/data_sources.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-scoopy.data_sources">
+<span id="scoopy-data-sources"></span><h1>scoopy.data_sources<a class="headerlink" href="#module-scoopy.data_sources" title="Link to this heading"></a></h1>
+<p>Data sources.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="scoopy.data_sources.headlines">
+<span class="sig-prename descclassname"><span class="pre">scoopy.data_sources.</span></span><span class="sig-name descname"><span class="pre">headlines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scoopy.data_sources.headlines" title="Link to this definition"></a></dt>
+<dd><p>Get headlines from Yahoo Finance.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scoopy.data_sources.yahoo_finance_headlines">
+<span class="sig-prename descclassname"><span class="pre">scoopy.data_sources.</span></span><span class="sig-name descname"><span class="pre">yahoo_finance_headlines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/scoopy/data_sources.html#yahoo_finance_headlines"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scoopy.data_sources.yahoo_finance_headlines" title="Link to this definition"></a></dt>
+<dd><p>Get headlines from Yahoo Finance.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scoopy.data_sources.yahoo_finance_news_for_ticker">
+<span class="sig-prename descclassname"><span class="pre">scoopy.data_sources.</span></span><span class="sig-name descname"><span class="pre">yahoo_finance_news_for_ticker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ticker_symbol</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">session</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/scoopy/data_sources.html#yahoo_finance_news_for_ticker"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scoopy.data_sources.yahoo_finance_news_for_ticker" title="Link to this definition"></a></dt>
+<dd><p>Retrieve news for a specific ticker using yfinance, with optional control over the underlying HTTP request.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ticker_symbol</strong> (<em>str</em>) – The ticker symbol (e.g., “AAPL”) for which to retrieve news.</p></li>
+<li><p><strong>session</strong> (<em>requests.Session</em><em>, </em><em>optional</em>) – A custom requests session to use for making HTTP requests.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em><em> or </em><em>float</em><em>, </em><em>optional</em>) – An optional timeout (in seconds) to use for the HTTP request.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of news items (each a dictionary) as returned by Yahoo Finance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, yfinance’s built-in <cite>news</cite> property does not support query filtering or additional parameters.
+This function merely provides a thin wrapper around yf.Ticker(ticker_symbol).news, with the option to
+control HTTP session and timeout settings.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scoopy.data_sources.yahoo_finance_news_search">
+<span class="sig-prename descclassname"><span class="pre">scoopy.data_sources.</span></span><span class="sig-name descname"><span class="pre">yahoo_finance_news_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">quotesCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newsCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">listsCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/scoopy/data_sources.html#yahoo_finance_news_search"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#scoopy.data_sources.yahoo_finance_news_search" title="Link to this definition"></a></dt>
+<dd><p>Search Yahoo Finance using the unofficial query endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>query</strong> (<em>str</em>) – The search term to look for.</p></li>
+<li><p><strong>quotesCount</strong> (<em>int</em>) – Number of quote results to return (default: 0).</p></li>
+<li><p><strong>newsCount</strong> (<em>int</em>) – Number of news results to return (default: 10).</p></li>
+<li><p><strong>listsCount</strong> (<em>int</em>) – Number of list results to return (default: 0).</p></li>
+<li><p><strong>headers</strong> (<em>dict</em>) – Optional HTTP headers for the request.</p></li>
+<li><p><strong>**kwargs</strong> – Additional parameters to include in the request.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The JSON response from the Yahoo Finance search API.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="base.html" class="btn btn-neutral float-left" title="scoopy.base" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="scoopy.examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p></p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

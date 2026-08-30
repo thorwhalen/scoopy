@@ -1,0 +1,4 @@
+scoopy
+======
+.. automodule:: scoopy
+   :members:

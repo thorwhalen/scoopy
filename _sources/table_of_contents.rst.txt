@@ -1,0 +1,10 @@
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   module_docs/scoopy
+   module_docs/scoopy/base
+   module_docs/scoopy/data_sources
+   module_docs/scoopy/examples
+   module_docs/scoopy/examples/search_and_save_news
+   module_docs/scoopy/util
