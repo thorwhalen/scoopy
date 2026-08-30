@@ -25,9 +25,3 @@ def search_and_save_news(query, store="~", country="us"):
     key = f"{current_time_str()}__{query}.json"
     store[key] = results
     return key
-
-
-if __name__ == "__main__":
-    import argh
-
-    argh.dispatch_command(search_and_save_news)
