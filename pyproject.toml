@@ -16,6 +16,7 @@ authors = [
     { name = "Thor Whalen" },
 ]
 dependencies = [
+    "beautifulsoup4",
     "dol",
     "i2",
     "requests",
