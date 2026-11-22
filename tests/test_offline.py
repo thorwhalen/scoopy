@@ -54,14 +54,19 @@ def test_yahoo_headlines_parse(monkeypatch):
     monkeypatch.setattr(data_sources.requests, "get", fake_get)
     assert list(data_sources.yahoo_finance_headlines()) == ["First headline", "Second"]
     assert seen["headers"] is data_sources.dflt_headers
-    assert list(data_sources.headlines(headers={"X": "1"})) == ["First headline", "Second"]
+    assert list(data_sources.headlines(headers={"X": "1"})) == [
+        "First headline",
+        "Second",
+    ]
 
 
 def test_yahoo_headlines_http_error(monkeypatch, capsys):
     monkeypatch.setattr(
         data_sources.requests, "get", lambda *a, **k: _Resp(status_code=503)
     )
-    assert list(data_sources.yahoo_finance_headlines()) == []  # error path yields nothing
+    assert (
+        list(data_sources.yahoo_finance_headlines()) == []
+    )  # error path yields nothing
     assert "Error 503" in capsys.readouterr().out
 
 
@@ -76,12 +81,18 @@ def test_yahoo_news_search_params(monkeypatch):
     out = data_sources.yahoo_finance_news_search("aapl", newsCount=3, region="US")
     assert out == {"news": []}
     assert seen["params"] == {
-        "q": "aapl", "quotesCount": 0, "newsCount": 3, "listsCount": 0, "region": "US",
+        "q": "aapl",
+        "quotesCount": 0,
+        "newsCount": 3,
+        "listsCount": 0,
+        "region": "US",
     }
 
 
 def test_yahoo_news_search_raises_on_error(monkeypatch):
-    monkeypatch.setattr(data_sources.requests, "get", lambda *a, **k: _Resp(status_code=500))
+    monkeypatch.setattr(
+        data_sources.requests, "get", lambda *a, **k: _Resp(status_code=500)
+    )
     with pytest.raises(RuntimeError):
         data_sources.yahoo_finance_news_search("x")
 
@@ -122,7 +133,9 @@ def test_yfinance_wrapper(monkeypatch):
     mod = types.ModuleType("yfinance")
     mod.Ticker = Ticker
     monkeypatch.setitem(sys.modules, "yfinance", mod)
-    assert data_sources.yahoo_finance_news_for_ticker("AAPL", timeout=3) == [{"n": "AAPL"}]
+    assert data_sources.yahoo_finance_news_for_ticker("AAPL", timeout=3) == [
+        {"n": "AAPL"}
+    ]
 
 
 def test_search_news_dispatch(monkeypatch):
