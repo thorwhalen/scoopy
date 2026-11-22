@@ -1,0 +1,12 @@
+scoopy.base
+===========
+
+.. automodule:: scoopy.base
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      search_news
+   

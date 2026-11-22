@@ -1,0 +1,22 @@
+# scoopy
+
+> Python interface to live news
+
+
+## Pages
+
+- [scoopy](index.html.md): Python interface to live news
+- [API reference](api.html.md): | &#96;scoopy&#96;   | Access to news data   |
+- [scoopy](_autosummary/scoopy.html.md): Access to news data
+- [scoopy.base](_autosummary/scoopy.base.html.md): Base functionality of scoopy
+- [scoopy.data_sources](_autosummary/scoopy.data_sources.html.md): Data sources.
+- [scoopy.util](_autosummary/scoopy.util.html.md): Utility functions for Scoopy.
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 19:05 UTC&#42;&#42; from commit &lt;a href="https://github.com/tho...
+
+## Optional
+
+- [scoopy.md](scoopy.md): Complete documentation in a single file.
+
+## Build
+
+- [build_info.json](build_info.json): build provenance (commit, version, tool versions, whether the docs match the package)

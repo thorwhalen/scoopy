@@ -1,0 +1,15 @@
+# scoopy
+
+> Python interface to live news
+
+
+## Pages in this subsection
+
+- [scoopy](scoopy.html.md): Access to news data
+- [scoopy.base](scoopy.base.html.md): Base functionality of scoopy
+- [scoopy.data_sources](scoopy.data_sources.html.md): Data sources.
+- [scoopy.util](scoopy.util.html.md): Utility functions for Scoopy.
+
+## Optional
+
+- [Top-level llms.txt](../llms.txt): Complete documentation index.

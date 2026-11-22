@@ -1,0 +1,16 @@
+scoopy.data\_sources
+====================
+
+.. automodule:: scoopy.data_sources
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      headlines
+      newsdata_search
+      yahoo_finance_headlines
+      yahoo_finance_news_for_ticker
+      yahoo_finance_news_search
+   

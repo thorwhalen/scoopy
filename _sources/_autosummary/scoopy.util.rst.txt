@@ -1,0 +1,12 @@
+scoopy.util
+===========
+
+.. automodule:: scoopy.util
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      get_config
+   

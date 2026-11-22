@@ -1,0 +1,15 @@
+﻿scoopy
+======
+
+.. automodule:: scoopy
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   base
+   data_sources
+   util
