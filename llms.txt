@@ -11,7 +11,7 @@
 - [scoopy.base](_autosummary/scoopy.base.html.md): Base functionality of scoopy
 - [scoopy.data_sources](_autosummary/scoopy.data_sources.html.md): Data sources.
 - [scoopy.util](_autosummary/scoopy.util.html.md): Utility functions for Scoopy.
-- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 19:05 UTC&#42;&#42; from commit &lt;a href="https://github.com/tho...
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 21:47 UTC&#42;&#42; from commit &lt;a href="https://github.com/tho...
 
 ## Optional
 

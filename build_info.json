@@ -1,34 +1,32 @@
 {
   "schema_version": 1,
-  "built_at": "2026-11-22T19:05:41Z",
+  "built_at": "2026-11-22T21:47:41Z",
   "package": {
     "name": "scoopy",
     "version": "0.0.8",
     "display_name": "scoopy",
-    "source": "setup.cfg"
+    "source": "pyproject.toml"
   },
   "git": {
     "available": true,
-    "commit": "4c1e1227781925b5bb5fcb09687ff6dd974c0ab7",
-    "short_commit": "4c1e122",
+    "commit": "94fd92ef16b62797ebb95bcd46505c053e27a3f1",
+    "short_commit": "94fd92e",
     "branch": "main",
-    "tags": [
-      "0.0.8"
-    ],
+    "tags": [],
     "dirty": false,
     "remote_url": "https://github.com/thorwhalen/scoopy",
-    "commit_url": "https://github.com/thorwhalen/scoopy/commit/4c1e1227781925b5bb5fcb09687ff6dd974c0ab7",
+    "commit_url": "https://github.com/thorwhalen/scoopy/commit/94fd92ef16b62797ebb95bcd46505c053e27a3f1",
     "error": null
   },
   "ci": {
     "provider": "github",
     "repository": "thorwhalen/scoopy",
-    "sha": "39ea9d73e603f814a8d976ad7d0b872f64639609",
+    "sha": "94fd92ef16b62797ebb95bcd46505c053e27a3f1",
     "sha_in_history": true,
     "ref": "refs/heads/main",
     "ref_name": "main",
-    "run_id": "45058613508",
-    "run_url": "https://github.com/thorwhalen/scoopy/actions/runs/45058613508",
+    "run_id": "45073931589",
+    "run_url": "https://github.com/thorwhalen/scoopy/actions/runs/45073931589",
     "server_url": "https://github.com"
   },
   "tools": {
@@ -62,16 +60,14 @@
   },
   "pypi": {
     "checked": true,
-    "latest": "0.0.7",
-    "relation": "ahead",
+    "latest": "0.0.8",
+    "relation": "same",
     "error": null
   },
-  "reproduce": "git clone https://github.com/thorwhalen/scoopy && cd scoopy\ngit checkout 4c1e1227781925b5bb5fcb09687ff6dd974c0ab7\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
+  "reproduce": "git clone https://github.com/thorwhalen/scoopy && cd scoopy\ngit checkout 94fd92ef16b62797ebb95bcd46505c053e27a3f1\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
   "warnings": [],
   "alignment": {
-    "aligned": false,
-    "notes": [
-      "The documented version (0.0.8) is ahead of the latest release on PyPI (0.0.7): these docs describe unreleased code."
-    ]
+    "aligned": true,
+    "notes": []
   }
 }
