@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "built_at": "2026-11-22T21:47:41Z",
+  "built_at": "2026-11-23T02:59:03Z",
   "package": {
     "name": "scoopy",
     "version": "0.0.8",
@@ -9,24 +9,24 @@
   },
   "git": {
     "available": true,
-    "commit": "94fd92ef16b62797ebb95bcd46505c053e27a3f1",
-    "short_commit": "94fd92e",
+    "commit": "f610df119d1a0ff081d140de758db4c43bd6cbd8",
+    "short_commit": "f610df1",
     "branch": "main",
     "tags": [],
     "dirty": false,
     "remote_url": "https://github.com/thorwhalen/scoopy",
-    "commit_url": "https://github.com/thorwhalen/scoopy/commit/94fd92ef16b62797ebb95bcd46505c053e27a3f1",
+    "commit_url": "https://github.com/thorwhalen/scoopy/commit/f610df119d1a0ff081d140de758db4c43bd6cbd8",
     "error": null
   },
   "ci": {
     "provider": "github",
     "repository": "thorwhalen/scoopy",
-    "sha": "94fd92ef16b62797ebb95bcd46505c053e27a3f1",
+    "sha": "f610df119d1a0ff081d140de758db4c43bd6cbd8",
     "sha_in_history": true,
     "ref": "refs/heads/main",
     "ref_name": "main",
-    "run_id": "45073931589",
-    "run_url": "https://github.com/thorwhalen/scoopy/actions/runs/45073931589",
+    "run_id": "45103127582",
+    "run_url": "https://github.com/thorwhalen/scoopy/actions/runs/45103127582",
     "server_url": "https://github.com"
   },
   "tools": {
@@ -64,7 +64,7 @@
     "relation": "same",
     "error": null
   },
-  "reproduce": "git clone https://github.com/thorwhalen/scoopy && cd scoopy\ngit checkout 94fd92ef16b62797ebb95bcd46505c053e27a3f1\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
+  "reproduce": "git clone https://github.com/thorwhalen/scoopy && cd scoopy\ngit checkout f610df119d1a0ff081d140de758db4c43bd6cbd8\npip install \"epythet==0.2.23\"\nepythet quickstart . --ignore tests/ scrap/ examples/",
   "warnings": [],
   "alignment": {
     "aligned": true,

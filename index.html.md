@@ -2,12 +2,47 @@
 
 # scoopy
 
-Python interface to live news
+A Python interface to live news: current headlines and news search behind one function, whichever service answers.
 
-To install:	`pip install scoopy`
+```bash
+pip install scoopy
+```
 
-Depending on what news API you use, you may need an API key. Example:
+<!-- wads-docs: skip - live network call -->
+```python
+from scoopy import headlines
 
-* https://newsdata.io/
+headlines()  # ['Coup-hit Niger was betting on a China-backed oil pipeline ...', ...]
+```
+
+`headlines()` reads the Yahoo Finance front page, so it needs no API key.
+
+## Search
+
+`search_news(query, source=...)` searches a news service and returns what it found:
+
+<!-- wads-docs: skip - live network call; the default source needs an API key -->
+```python
+from scoopy import search_news
+
+search_news("central bank", source="yahoo_finance")  # no key: the raw JSON of Yahoo Finance's search endpoint
+search_news("central bank")                           # the default source, newsdata.io: a list of articles
+```
+
+| `source`                    | What it is                                                                              | Needs                                                                                  |
+|-----------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| `"yahoo_finance_headlines"` | the Yahoo Finance front-page headlines (no query)                                       | nothing                                                                                |
+| `"yahoo_finance"`           | Yahoo Finance’s unofficial search endpoint; pass `newsCount=`, `quotesCount=` and so on | nothing                                                                                |
+| `"newsdata"` (the default)  | [newsdata.io](https://newsdata.io/documentation)                                        | `pip install newsdataapi`, and your key in the environment variable `NEWSDATA_API_KEY` |
+
+A missing key raises a `ValueError` that names the variable. The Yahoo endpoints are unofficial and can change without notice.
+
+## Per-service functions
+
+`search_news` dispatches to these, which you can also call directly: `newsdata_search`, `yahoo_finance_news_search` and `yahoo_finance_headlines` (`headlines` is its alias, kept so the source of headlines can change later without changing your code).
+
+## License
+
+MIT
 
 <p class="epythet-aggregates">This documentation as a single file: <a href="scoopy.md">scoopy.md</a> (Markdown, for agents).</p>

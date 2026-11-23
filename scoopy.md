@@ -1,4 +1,4 @@
-> built 2026-11-22 21:47 UTC from 94fd92e (main) · scoopy 0.0.8. Details: build_info.json
+> built 2026-11-23 02:59 UTC from f610df1 (main) · scoopy 0.0.8. Details: build_info.json
 
 # index.html.md
 
@@ -6,13 +6,48 @@
 
 # scoopy
 
-Python interface to live news
+A Python interface to live news: current headlines and news search behind one function, whichever service answers.
 
-To install:	`pip install scoopy`
+```bash
+pip install scoopy
+```
 
-Depending on what news API you use, you may need an API key. Example:
+<!-- wads-docs: skip - live network call -->
+```python
+from scoopy import headlines
 
-* https://newsdata.io/
+headlines()  # ['Coup-hit Niger was betting on a China-backed oil pipeline ...', ...]
+```
+
+`headlines()` reads the Yahoo Finance front page, so it needs no API key.
+
+## Search
+
+`search_news(query, source=...)` searches a news service and returns what it found:
+
+<!-- wads-docs: skip - live network call; the default source needs an API key -->
+```python
+from scoopy import search_news
+
+search_news("central bank", source="yahoo_finance")  # no key: the raw JSON of Yahoo Finance's search endpoint
+search_news("central bank")                           # the default source, newsdata.io: a list of articles
+```
+
+| `source`                    | What it is                                                                              | Needs                                                                                  |
+|-----------------------------|-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| `"yahoo_finance_headlines"` | the Yahoo Finance front-page headlines (no query)                                       | nothing                                                                                |
+| `"yahoo_finance"`           | Yahoo Finance’s unofficial search endpoint; pass `newsCount=`, `quotesCount=` and so on | nothing                                                                                |
+| `"newsdata"` (the default)  | [newsdata.io](https://newsdata.io/documentation)                                        | `pip install newsdataapi`, and your key in the environment variable `NEWSDATA_API_KEY` |
+
+A missing key raises a `ValueError` that names the variable. The Yahoo endpoints are unofficial and can change without notice.
+
+## Per-service functions
+
+`search_news` dispatches to these, which you can also call directly: `newsdata_search`, `yahoo_finance_news_search` and `yahoo_finance_headlines` (`headlines` is its alias, kept so the source of headlines can change later without changing your code).
+
+## License
+
+MIT
 
 <p class="epythet-aggregates">This documentation as a single file: <a href="scoopy.md">scoopy.md</a> (Markdown, for agents).</p>
 
@@ -137,7 +172,7 @@ Get a configuration value from the environment or raise an error if missing.
 
 # About this build
 
-This documentation was built on **2026-11-22 21:47 UTC** from commit <a href="https://github.com/thorwhalen/scoopy/commit/94fd92ef16b62797ebb95bcd46505c053e27a3f1"><code>94fd92e</code></a> on branch <code>main</code>, for **scoopy 0.0.8** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-23 02:59 UTC** from commit <a href="https://github.com/thorwhalen/scoopy/commit/f610df119d1a0ff081d140de758db4c43bd6cbd8"><code>f610df1</code></a> on branch <code>main</code>, for **scoopy 0.0.8** (from <code>pyproject.toml</code>).
 
 #### NOTE
 Nothing suggests a mismatch: the tree was clean at the commit above, and the documented version is the one on PyPI.
@@ -146,7 +181,7 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 
 |                     |                                                                                                                                                          |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/thorwhalen/scoopy/commit/94fd92ef16b62797ebb95bcd46505c053e27a3f1"><code>94fd92ef16b62797ebb95bcd46505c053e27a3f1</code></a> |
+| Commit              | <a href="https://github.com/thorwhalen/scoopy/commit/f610df119d1a0ff081d140de758db4c43bd6cbd8"><code>f610df119d1a0ff081d140de758db4c43bd6cbd8</code></a> |
 | Branch              | <code>main</code>                                                                                                                                        |
 | Tags at this commit | none                                                                                                                                                     |
 | Working tree        | clean                                                                                                                                                    |
@@ -157,9 +192,9 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>thorwhalen/scoopy</code>                                                             |
-| Run          | <a href="https://github.com/thorwhalen/scoopy/actions/runs/45073931589">45073931589</a>    |
+| Run          | <a href="https://github.com/thorwhalen/scoopy/actions/runs/45103127582">45103127582</a>    |
 | Ref          | <code>refs/heads/main</code>                                                               |
-| Event commit | <code>94fd92ef16b62797ebb95bcd46505c053e27a3f1</code> (in the history of the built commit) |
+| Event commit | <code>f610df119d1a0ff081d140de758db4c43bd6cbd8</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -190,7 +225,7 @@ Latest release: <a href="https://pypi.org/project/scoopy/0.0.8/">0.0.8</a>, the 
 
 ```bash
 git clone https://github.com/thorwhalen/scoopy && cd scoopy
-git checkout 94fd92ef16b62797ebb95bcd46505c053e27a3f1
+git checkout f610df119d1a0ff081d140de758db4c43bd6cbd8
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```

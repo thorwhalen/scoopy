@@ -2,7 +2,7 @@
 
 # About this build
 
-This documentation was built on **2026-11-22 21:47 UTC** from commit <a href="https://github.com/thorwhalen/scoopy/commit/94fd92ef16b62797ebb95bcd46505c053e27a3f1"><code>94fd92e</code></a> on branch <code>main</code>, for **scoopy 0.0.8** (from <code>pyproject.toml</code>).
+This documentation was built on **2026-11-23 02:59 UTC** from commit <a href="https://github.com/thorwhalen/scoopy/commit/f610df119d1a0ff081d140de758db4c43bd6cbd8"><code>f610df1</code></a> on branch <code>main</code>, for **scoopy 0.0.8** (from <code>pyproject.toml</code>).
 
 #### NOTE
 Nothing suggests a mismatch: the tree was clean at the commit above, and the documented version is the one on PyPI.
@@ -11,7 +11,7 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 
 |                     |                                                                                                                                                          |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commit              | <a href="https://github.com/thorwhalen/scoopy/commit/94fd92ef16b62797ebb95bcd46505c053e27a3f1"><code>94fd92ef16b62797ebb95bcd46505c053e27a3f1</code></a> |
+| Commit              | <a href="https://github.com/thorwhalen/scoopy/commit/f610df119d1a0ff081d140de758db4c43bd6cbd8"><code>f610df119d1a0ff081d140de758db4c43bd6cbd8</code></a> |
 | Branch              | <code>main</code>                                                                                                                                        |
 | Tags at this commit | none                                                                                                                                                     |
 | Working tree        | clean                                                                                                                                                    |
@@ -22,9 +22,9 @@ Nothing suggests a mismatch: the tree was clean at the commit above, and the doc
 |              |                                                                                            |
 |--------------|--------------------------------------------------------------------------------------------|
 | Repository   | <code>thorwhalen/scoopy</code>                                                             |
-| Run          | <a href="https://github.com/thorwhalen/scoopy/actions/runs/45073931589">45073931589</a>    |
+| Run          | <a href="https://github.com/thorwhalen/scoopy/actions/runs/45103127582">45103127582</a>    |
 | Ref          | <code>refs/heads/main</code>                                                               |
-| Event commit | <code>94fd92ef16b62797ebb95bcd46505c053e27a3f1</code> (in the history of the built commit) |
+| Event commit | <code>f610df119d1a0ff081d140de758db4c43bd6cbd8</code> (in the history of the built commit) |
 
 ## Tools
 
@@ -55,7 +55,7 @@ Latest release: <a href="https://pypi.org/project/scoopy/0.0.8/">0.0.8</a>, the 
 
 ```bash
 git clone https://github.com/thorwhalen/scoopy && cd scoopy
-git checkout 94fd92ef16b62797ebb95bcd46505c053e27a3f1
+git checkout f610df119d1a0ff081d140de758db4c43bd6cbd8
 pip install "epythet==0.2.23"
 epythet quickstart . --ignore tests/ scrap/ examples/
 ```
